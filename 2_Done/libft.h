@@ -6,7 +6,7 @@
 /*   By: ddiniz <ddiniz@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 12:31:42 by ddiniz            #+#    #+#             */
-/*   Updated: 2022/04/08 12:04:57 by ddiniz           ###   ########.fr       */
+/*   Updated: 2022/04/08 16:11:27 by ddiniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,8 @@ size_t ft_strlen(const char *s); //<string.h>
 void	*ft_memset(void *s, int c, size_t n); //<string.h>
 void	*ft_memcpy(void *s1, const void *s2, size_t n); //<string.h>
 char	*ft_strchr(const char *s, int c); //<string.h>
+char	*ft_strcpy(char s1, const char s2) //<string.h>
+
 
 void	ft_bzero(void *s, size_t n); //<string.h>
+
