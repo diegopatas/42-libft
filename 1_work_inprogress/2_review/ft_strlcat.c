@@ -5,28 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddiniz <ddiniz@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/11 15:27:58 by ddiniz            #+#    #+#             */
-/*   Updated: 2022/04/12 10:03:16 by ddiniz           ###   ########.fr       */
+/*   Created: 2022/04/14 13:56:34 by ddiniz            #+#    #+#             */
+/*   Updated: 2022/04/14 14:00:05 by ddiniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <string.h> //TODO: clean this line
+#include "libft.h"
 
-char    *ft_strlcat(const char *s1, const char *s2, size_t n)
+t_size	ft_strlcat(char *dst, const char *src, t_size size)
 {
-    size_t len;
-    char *ptr;
+	t_size	len;
+	char	*ptr;
 
-    len = strlen(s1); // TODO: edit this line
-    ptr = (char *)s1 + len;
-    while (*s2 && n > 0)
-    {
-        *ptr = *s2;
-        s2++;
-        ptr++;
-        n--;
-    }
-    *ptr = '\0';
-    return ((char *)s1);
+	len = ft_strlen(dst);
+	ptr = (char *)des + len;
+	while (*src && n > 0)
+	{
+		*ptr = *src;
+		src++;
+		ptr++;
+		n--;
+	}
+	*ptr = '\0';
+	return ((char *)src);
 }

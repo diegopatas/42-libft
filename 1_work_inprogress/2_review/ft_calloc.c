@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddiniz <ddiniz@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/06 11:39:39 by ddiniz            #+#    #+#             */
-/*   Updated: 2022/04/14 10:06:48 by ddiniz           ###   ########.fr       */
+/*   Created: 2022/04/13 23:09:47 by ddiniz            #+#    #+#             */
+/*   Updated: 2022/04/14 14:46:58 by ddiniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//TODO: test of compilation using makefile
-
-int	ft_isalnum(int c)
+void	*ft_calloc(t_size nelem, t_size elsize)
 {
-	if (ft_isalpha(c) || ft_isdigit(c))
-		return (1);
-	return (0);
+	void	*ptr;
+	void	*save_ptr;
+
+	ptr = malloc(nelem * elsize);
+	save_ptr = ptr;
+	if (!ptr)
+		return (0);
+	while (nelem--)
+	{
+		*(int *)ptr = 0;
+		ptr++;
+	}
+	return (save_ptr);
 }

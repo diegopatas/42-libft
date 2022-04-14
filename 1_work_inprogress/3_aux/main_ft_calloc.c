@@ -1,28 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   main_ft_calloc.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddiniz <ddiniz@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/08 15:58:23 by ddiniz            #+#    #+#             */
-/*   Updated: 2022/04/08 18:35:35 by ddiniz           ###   ########.fr       */
+/*   Created: 2022/04/13 23:16:36 by ddiniz            #+#    #+#             */
+/*   Updated: 2022/04/13 23:29:46 by ddiniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//FIX: build a copy of function strlcpy
+#include <stdio.h>
+#include <stdlib.h>
 
-char	*ft_strcpy(char *s1, const char *s2)
+void	*ft_calloc(size_t nelem, size_t elsize);
+
+int	main(void)
 {
-	char	*start;
+	char	*str;
+	char	*str_c;
+	int	n;
 
-	start = s1;
-	while (*s2)
+	n = 5;
+	str = (char *)calloc(n, sizeof(char));
+	while (n > 0)
 	{
-		*s1 = *s2;
-		s1++;
-		s2++;
+		printf("char: %c\n", *str + '0');
+		str++;
+		n--;
 	}
-	*s1 = '\0';
-	return (start);
+	n = 5;
+	str_c = (char *)calloc(n, sizeof(char));
+	while (n > 0)
+	{
+		printf("char: %c\n", *str_c + '0');
+		str_c++;
+		n--;
+	}
+	return (0);
 }

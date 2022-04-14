@@ -6,15 +6,15 @@
 /*   By: ddiniz <ddiniz@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 16:54:51 by ddiniz            #+#    #+#             */
-/*   Updated: 2022/04/12 17:25:02 by ddiniz           ###   ########.fr       */
+/*   Updated: 2022/04/14 14:27:29 by ddiniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, t_size n)
 {
-	while ((*(char *)s1 == *(char *)s2) && (n -1 > 0))
+	while ((*(char *)s1 == *(char *)s2) && (n - 1 > 0))
 	{
 		s1++;
 		s2++;

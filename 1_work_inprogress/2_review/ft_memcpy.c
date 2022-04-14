@@ -6,16 +6,14 @@
 /*   By: ddiniz <ddiniz@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 13:28:57 by ddiniz            #+#    #+#             */
-/*   Updated: 2022/04/07 21:57:40 by ddiniz           ###   ########.fr       */
+/*   Updated: 2022/04/14 10:31:44 by ddiniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h> //TODO: delete this line
-
-void	*ft_memcpy(void *s1, const void *s2, size_t n) //FIX: define t_size
+void	*ft_memcpy(void *s1, const void *s2, t_size n)
 {
 	const void	*save_end_s2;
-	void	*save_end_s1;
+	void		*save_end_s1;
 
 	save_end_s2 = s2;
 	save_end_s1 = s1;
@@ -30,4 +28,3 @@ void	*ft_memcpy(void *s1, const void *s2, size_t n) //FIX: define t_size
 	s2 = save_end_s2;
 	return (save_end_s1);
 }
-

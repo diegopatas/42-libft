@@ -6,13 +6,11 @@
 /*   By: ddiniz <ddiniz@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 13:02:41 by ddiniz            #+#    #+#             */
-/*   Updated: 2022/04/07 21:57:13 by ddiniz           ###   ########.fr       */
+/*   Updated: 2022/04/14 10:26:02 by ddiniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h> //TODO: delete this
-
-void	ft_bzero(void *s, size_t n) //FIX: define t_size
+void	ft_bzero(void *s, t_size n) //FIX: define t_size
 {
 	void	*save_end;
 

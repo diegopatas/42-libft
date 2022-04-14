@@ -6,13 +6,11 @@
 /*   By: ddiniz <ddiniz@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 13:21:36 by ddiniz            #+#    #+#             */
-/*   Updated: 2022/04/13 16:47:12 by ddiniz           ###   ########.fr       */
+/*   Updated: 2022/04/14 10:40:59 by ddiniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-void	ft_memmove(void *s1, const void *s2, size_t n)
+void	ft_memmove(void *s1, const void *s2, t_size n)
 {
 	if ((s1 == 0) || (s2 == 0))
 		return (0);
@@ -22,4 +20,3 @@ void	ft_memmove(void *s1, const void *s2, size_t n)
 		}
 	return (s1);
 }
-

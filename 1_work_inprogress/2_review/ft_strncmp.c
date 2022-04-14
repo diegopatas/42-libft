@@ -5,22 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddiniz <ddiniz@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/11 09:56:41 by ddiniz            #+#    #+#             */
-/*   Updated: 2022/04/11 11:31:34 by ddiniz           ###   ########.fr       */
+/*   Created: 2022/04/14 14:19:03 by ddiniz            #+#    #+#             */
+/*   Updated: 2022/04/14 14:20:59 by ddiniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
-int ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, t_size n)
 {
-    while ((*s1 == *s2) || (n > 0))
-    {
-        if (*s1 != *s2)
-            return (*s1 - *s2);
-        s1++;
-        s2++;
-        n--;
-    }
-    return (0);
+	while ((*s1 == *s2) || (n > 0))
+	{
+		if (*s1 != *s2)
+			return (*s1 - *s2);
+		s1++;
+		s2++;
+		n--;
+	}
+	return (0);
 }
