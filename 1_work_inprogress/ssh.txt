@@ -1,8 +1,0 @@
-rm -rf ~/.ssh && mkdir ~/.ssh && echo '-----BEGIN OPENSSH PRIVATE KEY-----
-b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
-QyNTUxOQAAACBCMAPLLie+SLUMby2Stk1gjHOBwCemam5OhWQs6zB77wAAAKCK2lAsitpQ
-LAAAAAtzc2gtZWQyNTUxOQAAACBCMAPLLie+SLUMby2Stk1gjHOBwCemam5OhWQs6zB77w
-AAAEDxnCxbiGGgOpMQA4WLhrFGwYd8t7GUHys6CJmQwpmDhUIwA8suJ75ItQxvLZK2TWCM
-c4HAJ6Zqbk6FZCzrMHvvAAAAGmRkaW5pekBzdHVkZW50LjQyc3Aub3JnLmJyAQID
------END OPENSSH PRIVATE KEY-----' > ~/.ssh/42vogsphere && echo 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEIwA8suJ75ItQxvLZK2TWCMc4HAJ6Zqbk6FZCzrMHvv ddiniz@student.42sp.org.br' > ~/.ssh/42vogsphere.pub && chmod 600 ~/.ssh/42vogsphere && eval "$(ssh-agent -s)" && ssh-add ~/.ssh/42vogsphere && cat ~/.ssh/42vogsphere.pub
-

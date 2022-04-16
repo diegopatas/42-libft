@@ -1,0 +1,33 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile_5_orderonly_prereq                        :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ddiniz <ddiniz@student.42sp.org.br>        +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/04/15 20:44:21 by ddiniz            #+#    #+#              #
+#    Updated: 2022/04/15 21:18:08 by ddiniz           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+OBJS_DIR	= objs_dir
+
+OBJS		= $(addprefix $(OBJS_DIR)/, main.o ft_sum.o)
+
+CC			= gcc
+CFLAGS		= -Wall -Wextra -Werror
+
+$(OBJS_DIR)/%.o: %.c lib.h
+	$(CC) $(CFLAGS) -c $<
+
+all: $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o program
+
+# The rule to create the objdir directory will be run,
+# if needed, before any ‘.o’ is built,
+# but no ‘.o’ will be built because the objdir directory
+# timestamp changed.
+$(OBJS): | $(OBJS_DIR)
+
+$(OBJS_DIR):
+	mkdir $(OBJS_DIR)
