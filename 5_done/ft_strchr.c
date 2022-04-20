@@ -6,7 +6,7 @@
 /*   By: ddiniz <ddiniz@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 23:39:54 by ddiniz            #+#    #+#             */
-/*   Updated: 2022/04/19 23:41:29 by ddiniz           ###   ########.fr       */
+/*   Updated: 2022/04/20 18:41:41 by ddiniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,17 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	if (ft_isalpha(c))
+	if (c == '\0')
 	{
-		while (*s || *s == '\0')
-		{
-			if (*s == c)
-				return ((char *)s);
+		while (*s)
 			s++;
-		}
+		return ((char *)s);
+	}
+	while (*s)
+	{
+		if (*s == c)
+			return ((char *)s);
+		s++;
 	}
 	return (0);
 }

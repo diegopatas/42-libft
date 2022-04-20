@@ -6,19 +6,9 @@
 /*   By: ddiniz <ddiniz@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 13:21:36 by ddiniz            #+#    #+#             */
-/*   Updated: 2022/04/17 20:24:04 by ddiniz           ###   ########.fr       */
+/*   Updated: 2022/04/20 16:21:19 by ddiniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void	ft_memmove(void *s1, const void *s2, size_t n)
-{
-	if ((s1 == 0) || (s2 == 0))
-		return (0);
-	if ((s2 < s1) && (s1 < s2 + n))
-		while (n--)
-		{
-		}
-	return (s1);
-}

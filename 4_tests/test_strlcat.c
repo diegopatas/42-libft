@@ -6,13 +6,13 @@
 /*   By: ddiniz <ddiniz@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 16:11:14 by ddiniz            #+#    #+#             */
-/*   Updated: 2022/04/19 20:34:12 by ddiniz           ###   ########.fr       */
+/*   Updated: 2022/04/20 19:30:10 by ddiniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stddef.h>
-#include "../../2_Done/libft.h"
+#include "../5_done/libft.h"
 #include <bsd/string.h>
 
 int	main(int argc, char *argv[])
