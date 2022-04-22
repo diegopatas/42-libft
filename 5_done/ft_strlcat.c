@@ -6,7 +6,7 @@
 /*   By: ddiniz <ddiniz@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 13:56:34 by ddiniz            #+#    #+#             */
-/*   Updated: 2022/04/20 19:35:09 by ddiniz           ###   ########.fr       */
+/*   Updated: 2022/04/21 22:18:54 by ddiniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,15 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	char	*app;
-	size_t	max;
-	size_t	length_t;
+	size_t	len_src;
+	size_t	len_dst;
 
-	length_t = ft_strlen(dst) + ft_strlen(src);
-	max = ft_strlen(dst);
-	if (size < max)
-		return (length_t - 2);
-	if (size > max + 1)
+	len_dst = ft_strlen(dst);
+	len_src = ft_strlen(src);
+	if (size > len_dst)
 	{
-		app = dst + ft_strlen(dst);
-		while (*src && size > max + 1)
-		{
-			*app = *src;
-			src++;
-			app++;
-			size--;
-		}
-		*app = '\0';
+		ft_strlcpy(dst + len_dst, src, size - len_dst);
+		return (len_dst + len_src);
 	}
-	return (length_t);
+	return (size + len_src);
 }
