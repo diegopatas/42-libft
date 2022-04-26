@@ -1,13 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddiniz <ddiniz@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/20 09:19:17 by ddiniz            #+#    #+#             */
-/*   Updated: 2022/04/20 09:19:26 by ddiniz           ###   ########.fr       */
+/*   Created: 2022/04/20 09:21:24 by ddiniz            #+#    #+#             */
+/*   Updated: 2022/04/24 22:46:12 by ddiniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putendl_fd(char *s, int fd);
+#include <unistd.h>
+#include "libft.h"
+
+void	ft_putnbr_fd(int n, int fd)
+{
+	ft_putstr_fd(ft_itoa(n), fd);
+}

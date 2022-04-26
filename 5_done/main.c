@@ -5,41 +5,57 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtoty <jtoty@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/28 12:02:17 by jtoty             #+#    #+#             */
-/*   Updated: 2022/04/21 22:39:59 by ddiniz           ###   ########.fr       */
+/*   Created: 2017/02/28 12:19:22 by jtoty             #+#    #+#             */
+/*   Updated: 2017/03/09 15:50:09 by jtoty            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <unistd.h>
-#include <string.h>
 #include "libft.h"
 
-static void		check_memmove(void *dest, void *src, int n)
+static void		ft_print_result(char *s)
 {
-	if (dest != ft_memmove(dest, src, n))
-		write(1, "dest's adress was not returned\n", 31);
-	write(1, dest, 22);
+	int		len;
+
+	if (!s)
+		write(1, "NULL", 4);
+	else
+	{
+		len = 0;
+		while (s[len])
+			len++;
+		write(1, s, len);
+		free(s);
+	}
 }
 
 int				main(int argc, const char *argv[])
 {
-	char	src[] = "lorem ipsum dolor sit amet";
-	char	*dest;
 	int		arg;
 
-	dest = src + 1;
+	alarm(5);
 	if (argc == 1)
 		return (0);
 	else if ((arg = atoi(argv[1])) == 1)
-		check_memmove(dest, "consectetur", 5);
+		ft_print_result(ft_itoa(0));
 	else if (arg == 2)
-		check_memmove(dest, "con\0sec\0\0te\0tur", 10);
+		ft_print_result(ft_itoa(9));
 	else if (arg == 3)
-		check_memmove(dest, src, 8);
+		ft_print_result(ft_itoa(-9));
 	else if (arg == 4)
-		check_memmove(src, dest, 8);
+		ft_print_result(ft_itoa(10));
 	else if (arg == 5)
-		check_memmove(src, dest, 0);
+		ft_print_result(ft_itoa(-10));
+	else if (arg == 6)
+		ft_print_result(ft_itoa(8124));
+	else if (arg == 7)
+		ft_print_result(ft_itoa(-9874));
+	else if (arg == 8)
+		ft_print_result(ft_itoa(543000));
+	else if (arg == 9)
+		ft_print_result(ft_itoa(-2147483648LL));
+	else if (arg == 10)
+		ft_print_result(ft_itoa(2147483647));
 	return (0);
 }

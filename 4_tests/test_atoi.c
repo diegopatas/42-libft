@@ -6,14 +6,14 @@
 /*   By: ddiniz <ddiniz@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 15:09:06 by ddiniz            #+#    #+#             */
-/*   Updated: 2022/04/19 15:18:23 by ddiniz           ###   ########.fr       */
+/*   Updated: 2022/04/23 10:05:43 by ddiniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <ctype.h>
 #include <stdlib.h>
-#include "../../2_Done/libft.h"
+#include "libft.h"
 
 int	main(void)
 {
