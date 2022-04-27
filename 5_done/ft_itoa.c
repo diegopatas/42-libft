@@ -6,7 +6,7 @@
 /*   By: ddiniz <ddiniz@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 09:13:49 by ddiniz            #+#    #+#             */
-/*   Updated: 2022/04/25 23:24:05 by ddiniz           ###   ########.fr       */
+/*   Updated: 2022/04/26 14:51:27 by ddiniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,27 +27,27 @@ static char	*ft_n_zero(void)
 
 static char	*ft_n_neg(int n)
 {
-	char	*str;
-	long	spot;
-	long	decomp;
-	long	n_pos;
+	char			*str;
+	long			spot;
+	int				decomp;
+	unsigned int	x;
 
-	n_pos = n *-1;
-	decomp = n_pos;
+	x = n * -1;
+	decomp = x;
 	spot = 0;
-	while (n_pos)
+	while (decomp)
 	{
-		n_pos /= 10;
+		decomp /= 10;
 		spot++;
 	}
 	str = (char *)malloc((spot + 2) * sizeof(char));
 	if (!str)
 		return (0);
 	str[spot + 1] = '\0';
-	while (decomp)
+	while (x)
 	{
-		str[spot] = decomp % 10 + '0';
-		decomp /= 10;
+		str[spot] = x % 10 + '0';
+		x /= 10;
 		spot--;
 	}
 	str[spot] = '-';
@@ -58,23 +58,23 @@ static char	*ft_n_pos(int n)
 {
 	char	*str;
 	long	spot;
-	long	decomp;
+	int		decomp;
 
 	decomp = n;
 	spot = 0;
-	while (n)
+	while (decomp)
 	{
-		n /= 10;
+		decomp /= 10;
 		spot++;
 	}
-	str = (char *)malloc((spot + 0) * sizeof(char));
+	str = (char *)malloc((spot + 1) * sizeof(char));
 	if (!str)
 		return (0);
 	str[spot] = '\0';
-	while (decomp)
+	while (n)
 	{
-		str[spot - 1] = decomp % 10 + '0';
-		decomp /= 10;
+		str[spot - 1] = n % 10 + '0';
+		n /= 10;
 		spot--;
 	}
 	return (str);
@@ -82,15 +82,10 @@ static char	*ft_n_pos(int n)
 
 char	*ft_itoa(int n)
 {
-	long	number;
-
-	number = n;
-	if (number < -2147483648 || number > 2147483647)
-		return (0);
-	else if (number == 0)
+	if (n == 0)
 		return (ft_n_zero());
-	else if (number > 0)
-		return (ft_n_pos(number));
+	else if (n > 0)
+		return (ft_n_pos(n));
 	else
-		return (ft_n_neg(number));
+		return (ft_n_neg(n));
 }
