@@ -6,7 +6,7 @@
 /*   By: ddiniz <ddiniz@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 18:39:07 by ddiniz            #+#    #+#             */
-/*   Updated: 2022/04/20 18:49:03 by ddiniz           ###   ########.fr       */
+/*   Updated: 2022/04/28 19:11:18 by ddiniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strrchr(const char *s, int c)
 		return ((char *)(s + len + 1));
 	while (len >= 0)
 	{
-		if (*(s + len) == c)
+		if (*(s + len) == (char )c)
 		{
 			return ((char *)(s + len));
 		}

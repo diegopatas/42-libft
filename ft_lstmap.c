@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_memchr.c                                      :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddiniz <ddiniz@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/12 16:16:58 by ddiniz            #+#    #+#             */
-/*   Updated: 2022/04/19 15:05:48 by ddiniz           ###   ########.fr       */
+/*   Created: 2022/04/27 16:36:36 by ddiniz            #+#    #+#             */
+/*   Updated: 2022/04/27 19:28:50 by ddiniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-#include <stddef.h>
 #include "libft.h"
+#include <stdlib.h>
 
-int	main(int argc, char *argv[])
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	char	str[50] = "42 school";
-	char	str_1[50] = "42 school";
+	t_list	*ptr_node;
+	t_list	*ptr_aux;
 
-	if (argc == 1)
-		printf("====\n%s\n====\n", argv[0]);
-	printf("Original: %s\n", (char *)memchr(str, 's', 4));
-	printf("Copy: %s\n", (char *)ft_memchr(str_1, 's', 4));
-	return (0);
+	ptr_aux = lst->next;
+	while (ptr_aux)
+	{
+		ptr_node = f(lst->content);
+	}
 }

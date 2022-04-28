@@ -5,26 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddiniz <ddiniz@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/07 23:39:54 by ddiniz            #+#    #+#             */
-/*   Updated: 2022/04/20 18:41:41 by ddiniz           ###   ########.fr       */
+/*   Created: 2022/04/28 16:13:44 by ddiniz            #+#    #+#             */
+/*   Updated: 2022/04/28 16:14:43 by ddiniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 char	*ft_strchr(const char *s, int c)
 {
-	if (c == '\0')
-	{
-		while (*s)
-			s++;
+	while (*s != (char)c)
+		{
+			if (!*s++)
+				return (0);
+		}
 		return ((char *)s);
-	}
-	while (*s)
-	{
-		if (*s == c)
-			return ((char *)s);
-		s++;
-	}
-	return (0);
 }
