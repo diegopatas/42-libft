@@ -6,75 +6,75 @@
 /*   By: ddiniz <ddiniz@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 12:54:35 by ddiniz            #+#    #+#             */
-/*   Updated: 2022/04/29 13:09:28 by ddiniz           ###   ########.fr       */
+/*   Updated: 2022/04/29 12:54:38 by ddiniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "libft.h"
 
-static size_t	ft_n_words(const char *s, char c)
+static size_t	ft_word_count(const char *s, char c)
 {
-	size_t			n_wrd;
+	size_t			word_count;
 	size_t			i;
 	unsigned int	flag;
 
-	n_wrd = 0;
+	word_count = 0;
 	i = 0;
 	flag = 0;
 	while (s[i])
 	{
 		if (s[i] != c && flag == 0)
 		{
-			n_wrd++;
+			word_count++;
 			flag = 1;
 		}
 		if (s[i] == c && flag == 1)
 			flag = 0;
 		i++;
 	}
-	return (n_wrd);
+	return (word_count);
 }
 
-static char	**ft_make_array(char **array_str, size_t n_wrd, char const *s, char c)
+static char	**feedstrs(char const *s, char c, size_t word_count, char **strs)
 {
-	size_t			index_wrd;
-	size_t			start_wrd;
-	size_t			index_s;
+	size_t			word_index;
+	size_t			s_index;
+	size_t			word_start;
 	unsigned int	flag;
 
-	index_wrd = 0;
-	index_s = 0;
+	word_index = 0;
+	s_index = 0;
 	flag = 0;
-	while (index_wrd < n_wrd)
+	while (word_index < word_count)
 	{
-		if (s[index_s] != c && flag == 0)
+		if (s[s_index] != c && flag == 0)
 		{
-			start_wrd = index_s;
+			word_start = s_index;
 			flag = 1;
 		}
-		if (s[index_s] == '\0' || (s[index_s] == c && flag == 1))
+		if (s[s_index] == '\0' || (s[s_index] == c && flag == 1))
 		{
-			array_str[index_wrd] = ft_substr(s, start_wrd, index_s - start_wrd);
+			strs[word_index] = ft_substr(s, word_start, s_index - word_start);
 			flag = 0;
-			index_wrd++;
+			word_index++;
 		}
-		index_s++;
+		s_index++;
 	}
-	return (array_str);
+	return (strs);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char			**array_str;
-	size_t			n_wrd;
+	char			**strs;
+	size_t			word_count;
 
 	if (!s)
 		return (NULL);
-	n_wrd = ft_n_words(s, c);
-	array_str = (char **) ft_calloc(n_wrd + 1, sizeof(char *));
-	if (!array_str)
+	word_count = ft_word_count(s, c);
+	strs = (char **) ft_calloc(word_count + 1, sizeof(char *));
+	if (!strs)
 		return (NULL);
-	ft_make_array(array_str, n_wrd, s, c);
-	return (array_str);
+	feedstrs(s, c, word_count, strs);
+	return (strs);
 }

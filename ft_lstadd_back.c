@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddiniz <ddiniz@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 10:25:17 by ddiniz            #+#    #+#             */
-/*   Updated: 2022/04/27 13:55:28 by ddiniz           ###   ########.fr       */
+/*   Updated: 2022/04/29 10:22:45 by ddiniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,14 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list	*last;
 	t_list	*aux;
 
 	aux = *lst;
-	last = ft_lstlast(aux);
-	if (last == 0)
+	if (!*lst)
 	{
-		new->next = *lst;
 		*lst = new;
+		return ;
 	}
-	else
-	{
-		last->next = new;
-		new->next = 0;
-	}
+	aux = ft_lstlast(aux);
+	aux->next = new;
 }
