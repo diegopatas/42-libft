@@ -6,7 +6,7 @@
 /*   By: ddiniz <ddiniz@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 16:19:50 by ddiniz            #+#    #+#             */
-/*   Updated: 2022/04/29 10:27:35 by ddiniz           ###   ########.fr       */
+/*   Updated: 2022/04/29 13:26:08 by ddiniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	t_list	*aux;
 	t_list	*aft;
 
-	if(!lst || !del)
+	if (!lst || !del)
 		return ;
 	aux = *lst;
 	while (aux)

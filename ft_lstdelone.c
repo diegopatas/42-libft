@@ -6,7 +6,7 @@
 /*   By: ddiniz <ddiniz@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 14:28:32 by ddiniz            #+#    #+#             */
-/*   Updated: 2022/04/29 09:58:57 by ddiniz           ###   ########.fr       */
+/*   Updated: 2022/04/29 13:29:52 by ddiniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-
 	if (lst != 0 && del != 0)
 	{
 		del(lst->content);

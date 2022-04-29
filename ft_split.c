@@ -6,10 +6,9 @@
 /*   By: ddiniz <ddiniz@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 12:54:35 by ddiniz            #+#    #+#             */
-/*   Updated: 2022/04/29 13:09:28 by ddiniz           ###   ########.fr       */
+/*   Updated: 2022/04/29 13:27:16 by ddiniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "libft.h"
 
@@ -36,7 +35,7 @@ static size_t	ft_n_words(const char *s, char c)
 	return (n_wrd);
 }
 
-static char	**ft_make_array(char **array_str, size_t n_wrd, char const *s, char c)
+static char	**ft_make_arr(char **array_str, size_t n_wrd, char const *s, char c)
 {
 	size_t			index_wrd;
 	size_t			start_wrd;
@@ -75,6 +74,6 @@ char	**ft_split(char const *s, char c)
 	array_str = (char **) ft_calloc(n_wrd + 1, sizeof(char *));
 	if (!array_str)
 		return (NULL);
-	ft_make_array(array_str, n_wrd, s, c);
+	ft_make_arr(array_str, n_wrd, s, c);
 	return (array_str);
 }
