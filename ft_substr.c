@@ -6,7 +6,7 @@
 /*   By: ddiniz <ddiniz@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 09:09:26 by ddiniz            #+#    #+#             */
-/*   Updated: 2022/04/28 22:54:57 by ddiniz           ###   ########.fr       */
+/*   Updated: 2022/04/29 14:58:55 by ddiniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!s)
 		return (0);
 	if (len_s <= start)
-		return ("");
+	{
+		sub_str = (char *)malloc(1);
+		sub_str[0] = '\0';
+		return (sub_str);
+	}
 	else if (len <= len_s - start)
 		sub_str = (char *)malloc((len + 1) * sizeof(char));
 	else
@@ -32,3 +36,4 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	ft_strlcpy(sub_str, s + start, len + 1);
 	return (sub_str);
 }
+

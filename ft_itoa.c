@@ -6,7 +6,7 @@
 /*   By: ddiniz <ddiniz@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 09:13:49 by ddiniz            #+#    #+#             */
-/*   Updated: 2022/04/26 14:51:27 by ddiniz           ###   ########.fr       */
+/*   Updated: 2022/04/29 15:18:57 by ddiniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@ static char	*ft_n_zero(void)
 	char	*str;
 
 	str = (char *)malloc(2 * sizeof(char));
-	if (!str)
-		return (0);
-	str[0] = 0 + '0';
+	str[0] = '0';
 	str[1] = '\0';
 	return (str);
 }

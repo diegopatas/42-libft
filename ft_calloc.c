@@ -6,7 +6,7 @@
 /*   By: ddiniz <ddiniz@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 23:09:47 by ddiniz            #+#    #+#             */
-/*   Updated: 2022/04/28 19:09:43 by ddiniz           ###   ########.fr       */
+/*   Updated: 2022/04/29 14:38:24 by ddiniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,11 @@
 void	*ft_calloc(size_t nelem, size_t elsize)
 {
 	void	*ptr;
-	size_t	max;
+	size_t	max_space;
 
-	max = nelem * elsize;
-	if (nelem != 0 && (max / nelem) != elsize)
-	{
+	max_space = nelem * elsize;
+	if (nelem != 0 && (max_space / nelem) != elsize)
 		return (0);
-	}
 	ptr = malloc(nelem * elsize);
 	if (!ptr)
 		return (0);
