@@ -6,7 +6,7 @@
 /*   By: ddiniz <ddiniz@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 09:09:26 by ddiniz            #+#    #+#             */
-/*   Updated: 2022/04/29 14:58:55 by ddiniz           ###   ########.fr       */
+/*   Updated: 2022/04/29 15:53:09 by ddiniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	ft_strlcpy(sub_str, s + start, len + 1);
 	return (sub_str);
 }
-

@@ -6,7 +6,7 @@
 /*   By: ddiniz <ddiniz@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 09:21:24 by ddiniz            #+#    #+#             */
-/*   Updated: 2022/04/29 15:41:01 by ddiniz           ###   ########.fr       */
+/*   Updated: 2022/04/29 15:52:47 by ddiniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-		long	x;
+	long	x;
 
 	x = n;
 	if (n < 0)

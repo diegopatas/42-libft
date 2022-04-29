@@ -6,7 +6,7 @@
 #    By: ddiniz <ddiniz@student.42sp.org.br>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/15 23:21:37 by ddiniz            #+#    #+#              #
-#    Updated: 2022/04/28 23:07:25 by ddiniz           ###   ########.fr        #
+#    Updated: 2022/04/29 16:31:20 by ddiniz           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,11 @@ bonus: $(B_OBJ)
 	ar -rc $(NAME) $^
 
 .PHONY: all clean fclean re
-clean: ; rm -rf $(OBJ) $(B_OBJ)
-fclean: clean; rm -rf $(NAME)
+
+clean:
+	rm -rf $(OBJ) $(B_OBJ)
+
+fclean: clean
+	rm -rf $(NAME)
+
 re: fclean all
