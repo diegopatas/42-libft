@@ -6,11 +6,11 @@
 #    By: ddiniz <ddiniz@student.42sp.org.br>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/15 23:21:37 by ddiniz            #+#    #+#              #
-#    Updated: 2022/04/29 16:31:20 by ddiniz           ###   ########.fr        #
+#    Updated: 2022/04/29 17:44:40 by ddiniz           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC		= gcc
+CC		= cc
 CFLAGS	= -Wall -Wextra -Werror
 
 SRC		= ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
@@ -25,7 +25,7 @@ B_SRC	= ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c \
 		  ft_lstiter.c ft_lstlast.c ft_lstnew.c ft_lstsize.c
 
 OBJ		= $(SRC:%.c=%.o)
-B_OBJ	= $(B_SRC:.c=.o)
+B_OBJ	= $(B_SRC:%.c=%.o)
 
 NAME	= libft.a
 
