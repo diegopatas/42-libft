@@ -6,13 +6,15 @@
 /*   By: ddiniz <ddiniz@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 20:00:01 by ddiniz            #+#    #+#             */
-/*   Updated: 2022/04/27 16:36:23 by ddiniz           ###   ########.fr       */
+/*   Updated: 2022/06/08 21:13:37 by ddiniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
 # include <stddef.h>
+# include <unistd.h>
 
 typedef struct s_list
 {
